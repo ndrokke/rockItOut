@@ -1,3 +1,142 @@
-body {
-    background-color:#333;
+:root {
+    --clr-primary: hsl(240, 100%, 50%);
+    --clr-dark: hsl(0, 0%, 20%);
+    --clr-gray:hsl(0, 0%, 27%);
+    --clr-lt-gray:hsl(0, 0%, 75%);
+    --clr-neutral: #ddd;
+    --ff-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --ff-heading:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --fs-body: 16px;
+    --fw-regular: 400;
+    --fw-bold: 700;
 }
+
+h1,h2,h3,h4,h5,h6 {
+    font-family:var(--ff-heading);
+    margin:0;
+    color:var(--clr-gray);
+}
+
+h2 {
+    margin-bottom:1rem;
+}
+
+body {
+    padding:0;
+    margin:0;
+    background-color:var(--clr-neutral);
+    font-family:var(--ff-base);
+    font-size:var(--fs-body);
+    font-weight:var(--fw-regular);
+    line-height: 1.5;
+}
+
+header, section {
+    padding-left:clamp(1em, 2em, 3em);
+    padding-right:clamp(1em,32px, 3em);
+}
+
+
+header {
+    height:3em;
+    background-color:var(--clr-dark);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top:0;
+}
+
+
+a {
+    text-decoration: none;
+    color:var(--clr-neutral);
+}
+
+a.button {
+    padding:0.5em 1em;
+    background-color:var(--clr-primary);
+
+}
+p.lead {
+    font-size:1.3rem;
+}
+
+/*===============================
+HEADER
+================================*/
+header nav {
+display:flex;
+gap:1rem;
+}
+
+
+@media (width > 768px) {
+ .header nav { gap:2em;}
+}
+
+
+/*===============================
+HERO
+================================*/
+.hero {
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    align-items:center;
+    margin-top:2rem;
+
+}
+.hero p.lead {
+    margin:0;
+ }
+
+
+/*===============================
+BENFEITS
+================================*/
+
+.benefits-wrapper {
+--column-count: 1;
+display:grid;
+gap:3rem;
+grid-template-columns:
+repeat(var(--column-count), 1fr);
+}
+
+@media (width > 768px) {
+.benefits-wrapper { --column-count: 3;}
+}
+
+.benefit p {
+    padding:0;
+    margin:0;
+}
+
+/*===============================
+SERVICES
+================================*/
+.services ul {
+    display:grid;
+    gap:1rem;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(min(22rem, 100%), 1fr))
+}
+/*===============================
+FAQ
+================================*/
+details {
+    margin-top:1em;
+}
+
+
+summary {
+    padding:1em 0;
+    border-top:1px solid #333;
+}
+
+summary::before {
+    border-top:1px solid #333;
+}
+
+
